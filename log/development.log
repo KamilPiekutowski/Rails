@@ -1,0 +1,125 @@
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (10.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (10.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateProducts (20191024043108)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "products" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "description" text, "image_url" varchar, "price" decimal(8), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191024043108"]]
+  [1m[35m (9.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-10-24 04:33:53.485385"], ["updated_at", "2019-10-24 04:33:53.485385"]]
+  [1m[35m (7.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/products" for 127.0.0.1 at 2019-10-23 23:36:01 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 1503ms (Views: 1498.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2019-10-23 23:36:22 -0500
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (18.3ms)
+  Rendered products/new.html.erb within layouts/application (19.2ms)
+Completed 200 OK in 37ms (Views: 29.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2019-10-23 23:39:18 -0500
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 12ms (Views: 11.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2019-10-23 23:39:20 -0500
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (2.3ms)
+  Rendered products/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 13ms (Views: 12.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2019-10-23 23:43:03 -0500
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mha9vbGnOLM0a64WCtuUNirPlBWLwG2BFSxu+P+hwCDbs6T8qX2KMvoWhZw581XU+IKknvRCtJodhsizhof9Hg==", "product"=>{"title"=>"Seven Mobile Apps in 5", "description"=>"<p>\r\n<em>Native Apps. Multiple Platforms</em>\r\nThis is all we have to offer right now. I am not going to get into writing a story.\r\n</p>", "image_url"=>"7apps.jpg", "price"=>"29.00"}, "commit"=>"Create Product"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "products" ("title", "description", "image_url", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Seven Mobile Apps in 5"], ["description", "<p>\r\n<em>Native Apps. Multiple Platforms</em>\r\nThis is all we have to offer right now. I am not going to get into writing a story.\r\n</p>"], ["image_url", "7apps.jpg"], ["price", 29], ["created_at", "2019-10-24 04:43:03.157859"], ["updated_at", "2019-10-24 04:43:03.157859"]]
+  [1m[35m (92.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/products/1
+Completed 302 Found in 96ms (ActiveRecord: 93.2ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2019-10-23 23:43:03 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 15ms (Views: 12.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2019-10-23 23:43:52 -0500
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 13ms (Views: 12.1ms | ActiveRecord: 0.1ms)
+
+
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35mSQL (8.6ms)[0m  [1m[31mDELETE FROM "products"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "products" ("title", "description", "image_url", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Rails, Angular, Postgres, and Bootstrap"], ["description", "<p>\n                <em>Powerful, Effective, and Efficient Full-Stack Web Development</em>\n                As a Rails developer, you care about user experience and performance,\n                but you also want simple and maintainable code. Achieve all that by\n                embracing the full stack of web development, from styling with\n                Bootstrap, building an interactive user interface with AngularJS, to\n                storing data quickly and reliably in PostgreSQL. Take a holistic view of\n                full-stack development to create usable, high-performing applications,\n                and learn to use these technologies effectively in a Ruby on Rails\n                environment.\n                </p>"], ["image_url", "adrpo.jpg"], ["price", 45], ["created_at", "2019-10-24 04:56:09.410711"], ["updated_at", "2019-10-24 04:56:09.410711"]]
+  [1m[35m (7.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "products" ("title", "description", "image_url", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Seven Mobile Apps in Seven Weeks"], ["description", "<p>\n                <em>Native Apps, Multiple Platforms</em>\n                Answer the question “Can we build this for ALL the devices?” with a\n                resounding YES. This book will help you get there with a real-world\n                introduction to seven platforms, whether you’re new to mobile or an\n                experienced developer needing to expand your options. Plus, you’ll find\n                out which cross-platform solution makes the most sense for your needs.\n                </p>"], ["image_url", "7apps.jpg"], ["price", 26], ["created_at", "2019-10-24 04:56:09.419662"], ["updated_at", "2019-10-24 04:56:09.419662"]]
+  [1m[35m (7.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "products" ("title", "description", "image_url", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Ruby Performance Optimization"], ["description", "<p>\n                <em>Why Ruby Is Slow, and How to Fix It</em>\n                You don’t have to accept slow Ruby or Rails performance. In this\n                comprehensive guide to Ruby optimization, you’ll learn how to write\n                faster Ruby code—but that’s just the beginning. See exactly what makes\n                Ruby and Rails code slow, and how to fix it. Alex Dymo will guide you\n                through perils of memory and CPU optimization, profiling, measuring,\n                performance testing, garbage collection, and tuning. You’ll find that\n                all those “hard” things aren’t so difficult after all, and your code\n                will run orders of magnitude faster.\n                </p>"], ["image_url", "dcbang.jpg"], ["price", 46], ["created_at", "2019-10-24 04:56:09.430284"], ["updated_at", "2019-10-24 04:56:09.430284"]]
+  [1m[35m (7.4ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/products" for 127.0.0.1 at 2019-10-23 23:56:20 -0500
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 22ms (Views: 21.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2019-10-24 00:05:14 -0500
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 25ms (Views: 23.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2019-10-24 00:05:15 -0500
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 12ms (Views: 11.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2019-10-24 00:08:22 -0500
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 13ms (Views: 11.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2019-10-24 00:16:01 -0500
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (25.4ms)
+Completed 200 OK in 37ms (Views: 35.0ms | ActiveRecord: 0.3ms)
+
+

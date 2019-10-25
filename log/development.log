@@ -123,3 +123,204 @@ Processing by ProductsController#index as HTML
 Completed 200 OK in 37ms (Views: 35.0ms | ActiveRecord: 0.3ms)
 
 
+Started GET "/example/test" for 127.0.0.1 at 2019-10-24 21:09:46 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/example/test"):
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/products" for 127.0.0.1 at 2019-10-24 21:10:05 -0500
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (370.7ms)
+Completed 200 OK in 499ms (Views: 482.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/products/2" for 127.0.0.1 at 2019-10-24 21:10:08 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 44ms (Views: 9.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-10-24 21:16:17 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/kamilp/.rvm/gems/ruby-2.5.5/gems/railties-5.1.7/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/kamilp/.rvm/gems/ruby-2.5.5/gems/railties-5.1.7/lib/rails/templates/rails/welcome/index.html.erb (2.4ms)
+Completed 200 OK in 28ms (Views: 5.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-10-24 21:18:06 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/kamilp/.rvm/gems/ruby-2.5.5/gems/railties-5.1.7/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/kamilp/.rvm/gems/ruby-2.5.5/gems/railties-5.1.7/lib/rails/templates/rails/welcome/index.html.erb (1.3ms)
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2019-10-24 21:22:07 -0500
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (71.0ms)
+  Rendered products/new.html.erb within layouts/application (71.8ms)
+Completed 200 OK in 176ms (Views: 175.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2019-10-24 21:22:15 -0500
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zsTeVCEAR0VrYvTZfcQM/Loac2xXeYKJ38P0eNQ7ICen3AIiswG5xwdRowmHvmeQaTlv4mgDgR5kCgcFNEgAOA==", "product"=>{"title"=>"", "description"=>"", "image_url"=>"", "price"=>""}, "commit"=>"Create Product"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (2.2ms)
+  Rendered products/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 24ms (Views: 12.2ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2019-10-24 21:24:26 -0500
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DyQoaYyFXI6zRuadOMQzuMJeo/Bq3C4mRwOmqV/rhDRmPPQfHoSiDN91sU3CvljUEX2/flWmLbH8ylXUv5ikKw==", "product"=>{"title"=>"", "description"=>"", "image_url"=>"", "price"=>"0.0"}, "commit"=>"Create Product"}
+Completed 500 Internal Server Error in 14ms
+
+
+  
+NoMethodError (undefined method `validated' for Product (call 'Product.connection' to establish a connection):Class
+Did you mean?  validate
+               validates
+               validates!
+               validators):
+  
+app/models/product.rb:3:in `<class:Product>'
+app/models/product.rb:1:in `<top (required)>'
+app/controllers/products_controller.rb:27:in `create'
+Started POST "/products" for 127.0.0.1 at 2019-10-24 21:24:44 -0500
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DyQoaYyFXI6zRuadOMQzuMJeo/Bq3C4mRwOmqV/rhDRmPPQfHoSiDN91sU3CvljUEX2/flWmLbH8ylXUv5ikKw==", "product"=>{"title"=>"", "description"=>"", "image_url"=>"", "price"=>"0.0"}, "commit"=>"Create Product"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (4.3ms)
+  Rendered products/new.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 41ms (Views: 25.1ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2019-10-24 21:28:59 -0500
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zsTeVCEAR0VrYvTZfcQM/Loac2xXeYKJ38P0eNQ7ICen3AIiswG5xwdRowmHvmeQaTlv4mgDgR5kCgcFNEgAOA==", "product"=>{"title"=>"", "description"=>"", "image_url"=>"", "price"=>""}, "commit"=>"Create Product"}
+Completed 500 Internal Server Error in 2ms
+
+
+  
+SyntaxError (/home/kamilp/Documents/depot/app/models/product.rb:6: syntax error, unexpected ':', expecting '}'
+		with: %r{\.gif|jpg|png\Z}i,
+		    ^
+/home/kamilp/Documents/depot/app/models/product.rb:6: syntax error, unexpected ',', expecting keyword_end
+		with: %r{\.gif|jpg|png\Z}i,
+		                          ^
+/home/kamilp/Documents/depot/app/models/product.rb:8: syntax error, unexpected '}', expecting keyword_end):
+  
+app/models/product.rb:6: syntax error, unexpected ':', expecting '}'
+app/models/product.rb:6: syntax error, unexpected ',', expecting keyword_end
+app/models/product.rb:8: syntax error, unexpected '}', expecting keyword_end
+app/controllers/products_controller.rb:27:in `create'
+Started POST "/products" for 127.0.0.1 at 2019-10-24 21:30:58 -0500
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zsTeVCEAR0VrYvTZfcQM/Loac2xXeYKJ38P0eNQ7ICen3AIiswG5xwdRowmHvmeQaTlv4mgDgR5kCgcFNEgAOA==", "product"=>{"title"=>"", "description"=>"", "image_url"=>"", "price"=>""}, "commit"=>"Create Product"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", ""], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (3.8ms)
+  Rendered products/new.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 39ms (Views: 14.8ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2019-10-24 21:31:09 -0500
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4JKENgiDv5A060qUzIeBf49JsNrNmbQeKlKYcr2biFWJilhAmoJBEljYHUQ2/eoTXGqsVPLjt4mRm2sPXeioSg==", "product"=>{"title"=>"", "description"=>"", "image_url"=>"sadf.bmp", "price"=>""}, "commit"=>"Create Product"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", ""], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (3.7ms)
+  Rendered products/new.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 22ms (Views: 18.0ms | ActiveRecord: 0.2ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (9.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "products"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (10.3ms)[0m  [1m[35mCREATE TABLE "products" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "description" text, "image_url" varchar, "price" decimal(8), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (9.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (7.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20191024043108)[0m
+  [1m[35m (9.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-10-25 02:39:34.589992"], ["updated_at", "2019-10-25 02:39:34.589992"]]
+  [1m[35m (7.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "products"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (9.0ms)[0m  [1m[35mCREATE TABLE "products" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "description" text, "image_url" varchar, "price" decimal(8), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (9.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (7.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20191024043108)[0m
+  [1m[35m (9.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-10-25 02:39:34.659813"], ["updated_at", "2019-10-25 02:39:34.659813"]]
+  [1m[35m (7.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2019-10-25 02:39:34.669157"], ["key", "environment"]]
+  [1m[35m (7.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35mSQL (8.4ms)[0m  [1m[31mDELETE FROM "products"[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "Rails, Angular, Postgres, and Bootstrap"], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "products" ("title", "description", "image_url", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Rails, Angular, Postgres, and Bootstrap"], ["description", "<p>\n                <em>Powerful, Effective, and Efficient Full-Stack Web Development</em>\n                As a Rails developer, you care about user experience and performance,\n                but you also want simple and maintainable code. Achieve all that by\n                embracing the full stack of web development, from styling with\n                Bootstrap, building an interactive user interface with AngularJS, to\n                storing data quickly and reliably in PostgreSQL. Take a holistic view of\n                full-stack development to create usable, high-performing applications,\n                and learn to use these technologies effectively in a Ruby on Rails\n                environment.\n                </p>"], ["image_url", "adrpo.jpg"], ["price", 45], ["created_at", "2019-10-25 02:39:34.719805"], ["updated_at", "2019-10-25 02:39:34.719805"]]
+  [1m[35m (6.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "Seven Mobile Apps in Seven Weeks"], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "products" ("title", "description", "image_url", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Seven Mobile Apps in Seven Weeks"], ["description", "<p>\n                <em>Native Apps, Multiple Platforms</em>\n                Answer the question “Can we build this for ALL the devices?” with a\n                resounding YES. This book will help you get there with a real-world\n                introduction to seven platforms, whether you’re new to mobile or an\n                experienced developer needing to expand your options. Plus, you’ll find\n                out which cross-platform solution makes the most sense for your needs.\n                </p>"], ["image_url", "7apps.jpg"], ["price", 26], ["created_at", "2019-10-25 02:39:34.728021"], ["updated_at", "2019-10-25 02:39:34.728021"]]
+  [1m[35m (6.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "Ruby Performance Optimization"], ["LIMIT", 1]]
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "products" ("title", "description", "image_url", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Ruby Performance Optimization"], ["description", "<p>\n                <em>Why Ruby Is Slow, and How to Fix It</em>\n                You don’t have to accept slow Ruby or Rails performance. In this\n                comprehensive guide to Ruby optimization, you’ll learn how to write\n                faster Ruby code—but that’s just the beginning. See exactly what makes\n                Ruby and Rails code slow, and how to fix it. Alex Dymo will guide you\n                through perils of memory and CPU optimization, profiling, measuring,\n                performance testing, garbage collection, and tuning. You’ll find that\n                all those “hard” things aren’t so difficult after all, and your code\n                will run orders of magnitude faster.\n                </p>"], ["image_url", "dcbang.jpg"], ["price", 46], ["created_at", "2019-10-25 02:39:34.735620"], ["updated_at", "2019-10-25 02:39:34.735620"]]
+  [1m[35m (6.7ms)[0m  [1m[36mcommit transaction[0m

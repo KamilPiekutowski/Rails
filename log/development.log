@@ -324,3 +324,417 @@ Completed 200 OK in 22ms (Views: 18.0ms | ActiveRecord: 0.2ms)
   [1m[36mProduct Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", "Ruby Performance Optimization"], ["LIMIT", 1]]
   [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "products" ("title", "description", "image_url", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Ruby Performance Optimization"], ["description", "<p>\n                <em>Why Ruby Is Slow, and How to Fix It</em>\n                You don’t have to accept slow Ruby or Rails performance. In this\n                comprehensive guide to Ruby optimization, you’ll learn how to write\n                faster Ruby code—but that’s just the beginning. See exactly what makes\n                Ruby and Rails code slow, and how to fix it. Alex Dymo will guide you\n                through perils of memory and CPU optimization, profiling, measuring,\n                performance testing, garbage collection, and tuning. You’ll find that\n                all those “hard” things aren’t so difficult after all, and your code\n                will run orders of magnitude faster.\n                </p>"], ["image_url", "dcbang.jpg"], ["price", 46], ["created_at", "2019-10-25 02:39:34.735620"], ["updated_at", "2019-10-25 02:39:34.735620"]]
   [1m[35m (6.7ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/store/index" for 127.0.0.1 at 2019-10-24 23:11:10 -0500
+Processing by StoreController#index as HTML
+  Rendering store/index.html.erb within layouts/application
+  Rendered store/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 52ms (Views: 51.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-10-24 23:12:34 -0500
+  
+SyntaxError (/home/kamilp/Documents/depot/config/routes.rb:2: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+	root 'store#index', as 'store_index' 
+	                       ^):
+  
+config/routes.rb:2: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+Started GET "/" for 127.0.0.1 at 2019-10-24 23:13:17 -0500
+Processing by StoreController#index as HTML
+  Rendering store/index.html.erb within layouts/application
+  Rendered store/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 12ms (Views: 11.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-10-24 23:21:53 -0500
+Processing by StoreController#index as HTML
+  Rendering store/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."title" ASC[0m
+  Rendered store/index.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 20ms (Views: 18.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-10-24 23:26:40 -0500
+Processing by StoreController#index as HTML
+  Rendering store/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."title" ASC[0m
+  Rendered store/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 32ms (Views: 30.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-10-24 23:26:42 -0500
+Processing by StoreController#index as HTML
+  Rendering store/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."title" ASC[0m
+  Rendered store/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 14ms (Views: 13.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-10-24 23:28:56 -0500
+Processing by StoreController#index as HTML
+  Rendering store/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."title" ASC[0m
+  Rendered store/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 17ms (Views: 15.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/store" for 127.0.0.1 at 2019-10-24 23:29:08 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/store"):
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/store/index" for 127.0.0.1 at 2019-10-24 23:29:18 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/store/index"):
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/store_index" for 127.0.0.1 at 2019-10-24 23:29:25 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/store_index"):
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/store_index_path" for 127.0.0.1 at 2019-10-24 23:29:35 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/store_index_path"):
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/rails/info/routes?path=store" for 127.0.0.1 at 2019-10-24 23:29:39 -0500
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"path"=>"store"}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/rails/info/routes?path=store/" for 127.0.0.1 at 2019-10-24 23:29:42 -0500
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"path"=>"store/"}
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/rails/info/routes?path=store/index" for 127.0.0.1 at 2019-10-24 23:29:44 -0500
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"path"=>"store/index"}
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/store" for 127.0.0.1 at 2019-10-24 23:29:50 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/store"):
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2019-10-24 23:30:05 -0500
+Processing by StoreController#index as HTML
+  Rendering store/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."title" ASC[0m
+  Rendered store/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 14ms (Views: 12.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-10-24 23:32:56 -0500
+Processing by StoreController#index as HTML
+  Rendering store/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."title" ASC[0m
+  Rendered store/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 27ms (Views: 25.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-10-24 23:32:57 -0500
+Processing by StoreController#index as HTML
+  Rendering store/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."title" ASC[0m
+  Rendered store/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 14ms (Views: 12.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-10-24 23:32:59 -0500
+Processing by StoreController#index as HTML
+  Rendering store/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."title" ASC[0m
+  Rendered store/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 24ms (Views: 23.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-10-24 23:35:21 -0500
+Processing by StoreController#index as HTML
+  Rendering store/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."title" ASC[0m
+  Rendered store/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 15ms (Views: 14.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-10-24 23:36:09 -0500
+Processing by StoreController#index as HTML
+  Rendering store/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."title" ASC[0m
+  Rendered store/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 30ms (Views: 29.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-10-24 23:36:21 -0500
+Processing by StoreController#index as HTML
+  Rendering store/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."title" ASC[0m
+  Rendered store/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 33ms (Views: 31.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-10-24 23:37:25 -0500
+Processing by StoreController#index as HTML
+  Rendering store/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."title" ASC[0m
+  Rendered store/index.html.erb within layouts/application (103.6ms)
+Completed 500 Internal Server Error in 105ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `line_items_path' for #<#<Class:0x00007f59580b1e50>:0x00007f5944ec3368>):
+    16:               </p>
+    17:               <div class="price">
+    18:                 <%= number_to_currency(product.price) %>
+    19:                 <%= button_to 'Add to Cart', line_items_path(product_id: product),
+    20:                  remote: true %>
+    21:               </div>
+    22:             </li>
+  
+app/views/store/index.html.erb:19:in `block (3 levels) in _app_views_store_index_html_erb___1563382238806467018_70010692592760'
+app/views/store/index.html.erb:10:in `block (2 levels) in _app_views_store_index_html_erb___1563382238806467018_70010692592760'
+app/views/store/index.html.erb:9:in `block in _app_views_store_index_html_erb___1563382238806467018_70010692592760'
+app/views/store/index.html.erb:8:in `_app_views_store_index_html_erb___1563382238806467018_70010692592760'
+Started GET "/" for 127.0.0.1 at 2019-10-24 23:40:36 -0500
+Processing by StoreController#index as HTML
+  Rendering store/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."title" ASC[0m
+  Rendered store/index.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 27ms (Views: 25.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-10-24 23:42:37 -0500
+Processing by StoreController#index as HTML
+  Rendering store/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."title" ASC[0m
+  Rendered store/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 20ms (Views: 19.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-10-24 23:45:44 -0500
+Processing by StoreController#index as HTML
+  Rendering store/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."title" ASC[0m
+  Rendered store/index.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 40ms (Views: 38.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-10-24 23:48:53 -0500
+Processing by StoreController#index as HTML
+  Rendering store/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."title" ASC[0m
+  Rendered store/index.html.erb within layouts/application (9.7ms)
+Completed 500 Internal Server Error in 44ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (Asset was not declared to be precompiled in production.
+Add `Rails.application.config.assets.precompile += %w( store.css )` to `config/initializers/assets.rb` and restart your server):
+    14: 		</main>
+    15:   </body>
+    16: </html>
+    17: <%= stylesheet_link_tag params[:controller] %>
+  
+app/views/layouts/application.html.erb:17:in `_app_views_layouts_application_html_erb__4329191789723947619_70010721449220'
+Started GET "/" for 127.0.0.1 at 2019-10-24 23:49:17 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StoreController#index as HTML
+  Rendering store/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."title" ASC[0m
+  Rendered store/index.html.erb within layouts/application (106.5ms)
+Completed 500 Internal Server Error in 154ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (Asset was not declared to be precompiled in production.
+Add `Rails.application.config.assets.precompile += %w( store.css )` to `config/initializers/assets.rb` and restart your server):
+    14: 		</main>
+    15:   </body>
+    16: </html>
+    17: <%= stylesheet_link_tag params[:controller] %>
+  
+app/views/layouts/application.html.erb:17:in `_app_views_layouts_application_html_erb__265167268820498130_47163679711740'
+Started GET "/" for 127.0.0.1 at 2019-10-24 23:50:04 -0500
+Processing by StoreController#index as HTML
+  Rendering store/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."title" ASC[0m
+  Rendered store/index.html.erb within layouts/application (5.4ms)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (Asset was not declared to be precompiled in production.
+Add `Rails.application.config.assets.precompile += %w( store.css )` to `config/initializers/assets.rb` and restart your server):
+    14: 		</main>
+    15:   </body>
+    16: </html>
+    17: <%= stylesheet_link_tag params[:controller] %>
+  
+app/views/layouts/application.html.erb:17:in `_app_views_layouts_application_html_erb__265167268820498130_69821186200480'
+Started GET "/" for 127.0.0.1 at 2019-10-24 23:50:17 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StoreController#index as HTML
+  Rendering store/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."title" ASC[0m
+  Rendered store/index.html.erb within layouts/application (146.8ms)
+Completed 200 OK in 165ms (Views: 159.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-10-24 23:51:53 -0500
+Processing by StoreController#index as HTML
+  Rendering store/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."title" ASC[0m
+  Rendered store/index.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 20ms (Views: 18.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-10-24 23:52:30 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StoreController#index as HTML
+  Rendering store/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."title" ASC[0m
+  Rendered store/index.html.erb within layouts/application (139.5ms)
+Completed 200 OK in 156ms (Views: 151.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-10-24 23:52:31 -0500
+Processing by StoreController#index as HTML
+  Rendering store/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."title" ASC[0m
+  Rendered store/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 17ms (Views: 15.6ms | ActiveRecord: 0.1ms)
+
+
